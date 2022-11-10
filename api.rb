@@ -2,7 +2,11 @@
 
 require 'sinatra'
 require 'json'
-require_relative 'helpers/songs_helper'
+require 'dotenv'
+
+Dotenv.load
+
+Dir[File.join(__dir__, 'helpers', '*.rb')].each { |file| require file }
 
 songs ||= SongsHelper.songs
 
@@ -31,14 +35,41 @@ helpers do
     halt 400, { message: 'Bad Request' }.to_json if params['id'].to_i < 1
     params['id'].to_i
   end
+
+  def authorize!
+    token = token_from_request
+
+    validation_response = Auth0ClientHelper.validate_token(token)
+
+    return unless (error = validation_response.error)
+
+    halt error.status, { message: error.message }.to_json
+  end
+
+  def token_from_request
+    authorization_header_elements = request.env['HTTP_AUTHORIZATION']&.split
+
+    halt 401, { message: 'Requires authentication' }.to_json unless authorization_header_elements
+
+    unless authorization_header_elements.length == 2
+      halt 401, { message: 'Authorization header value must follow this format: Bearer access-token' }.to_json
+    end
+
+    scheme, token = authorization_header_elements
+
+    halt 402, { message: 'Bad credentials' }.to_json unless scheme.downcase == 'bearer'
+
+    token
+  end
 end
 
 before do
   content_type 'application/json'
 end
 
-before method: %i[post put] do
+before method: %i[post put delete] do
   require_params!
+  authorize!
 end
 
 get '/songs' do
