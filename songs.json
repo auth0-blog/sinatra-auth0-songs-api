@@ -1,0 +1,55 @@
+{
+  "songs": 
+    [
+      {
+        "id": 1,
+        "name": "My Way",
+        "url": "https://www.last.fm/music/Frank+Sinatra/_/My+Way"
+      },
+      {
+        "id": 2,
+        "name": "Strangers in the Night",
+        "url": "https://www.last.fm/music/Frank+Sinatra/_/Strangers+in+the+Night"
+      },
+      {
+        "id": 3,  
+        "name": "Fly Me to the Moon",
+          "url": "https://www.last.fm/music/Frank+Sinatra/_/Fly+Me+to+the+Moon"
+      },
+      {
+        "id": 4,  
+        "name": "That's Life",
+          "url": "https://www.last.fm/music/Frank+Sinatra/_/That%27s+Life"
+      },
+      {
+        "id": 5,  
+        "name": "I've Got You Under My Skin",
+          "url": "https://www.last.fm/music/Frank+Sinatra/_/I%27ve+Got+You+Under+My+Skin"
+      },
+      {
+        "id": 6,  
+        "name": "Come Fly With Me",
+          "url": "https://www.last.fm/music/Frank+Sinatra/_/Come+Fly+With+Me"
+      },
+      {
+        "id": 7,  
+        "name": "The Way You Look Tonight",
+          "url": "https://www.last.fm/music/Frank+Sinatra/_/The+Way+You+Look+Tonight"
+      },
+      {
+        "id": 8,  
+        "name": "Fly Me to the Moon (In Other Words)",
+          "url": "https://www.last.fm/music/Frank+Sinatra/_/Fly+Me+to+the+Moon+(In+Other+Words)"
+      },
+      {
+        "id": 9,  
+        "name": "Theme from New York, New York",
+          "url": "https://www.last.fm/music/Frank+Sinatra/_/Theme+from+New+York,+New+York"
+      },
+      {
+        "id": 10,  
+        "name": "Jingle Bells",
+          "url": "https://www.last.fm/music/Frank+Sinatra/_/Jingle+Bells"
+      }
+  ]
+}
